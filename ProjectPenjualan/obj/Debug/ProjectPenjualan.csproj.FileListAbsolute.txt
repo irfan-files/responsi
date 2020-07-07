@@ -1,0 +1,5 @@
+D:\data amikom\pemograman semester 2\ProjectPenjualan\ProjectPenjualan\bin\Debug\ProjectPenjualan.exe
+D:\data amikom\pemograman semester 2\ProjectPenjualan\ProjectPenjualan\bin\Debug\ProjectPenjualan.pdb
+D:\data amikom\pemograman semester 2\ProjectPenjualan\ProjectPenjualan\obj\Debug\ProjectPenjualan.csprojAssemblyReference.cache
+D:\data amikom\pemograman semester 2\ProjectPenjualan\ProjectPenjualan\obj\Debug\ProjectPenjualan.exe
+D:\data amikom\pemograman semester 2\ProjectPenjualan\ProjectPenjualan\obj\Debug\ProjectPenjualan.pdb
