@@ -10,12 +10,7 @@ namespace ProjectPenjualan
         // deklarasi objek collection untuk menampung objek penjualan
         static List<Penjualan> daftarPenjualan = new List<Penjualan>();
 
-        DaftarPenjualan daftarpenjualan = new DaftarPenjualan();
-        Penjualan.Nota = int;
-        Penjualan.Tanggal = int;
-        Penjualan.Customer = string;
-        Penjualan.Jenis = switch;
-        Penjualan.Total = int;
+        
 
         static void Main(string[] args)
         {
@@ -63,30 +58,30 @@ namespace ProjectPenjualan
                 Console.WriteLine("");
         }
 
-        static void TambahPenjualan()
+         static void TambahPenjualan()
         {
             Console.Clear();
 
-            DaftarPenjualan daftarpenjualan = new DaftarPenjualan();
-
-
-                Console.WriteLine("Tambah Karyawan Tetap");
-
-                // Input Data ke instance Karyawantetap
-                Console.Write("Masukkan Nota \t\t: ");
-                Penjualan.Nota = Console.ReadLine();
-
-                Console.Write("Masukkan Nama \t\t: ");
-                Penjualan.Customer = Console.ReadLine();
-
-                Console.Write("Masukkan tanggal \t\t: ");
-                Penjualan.Tanggal = Console.ReadLine();
-
-                // Menambahkan Data
-                karyawan.Add(karyawanTetap);
-
             // PERINTAH: lengkapi kode untuk menambahkan penjualan ke dalam collection
+            Penjualan penjualan = new Penjualan();
+            Console.WriteLine("Tambah Data Penjualan");
+            Console.Write("Nota : ");
             
+            penjualan.nota = Console.ReadLine();
+            Console.Write("Tanggal : ");
+            penjualan.tanggal = Console.ReadLine();
+
+            Console.Write("Customer : ");
+            penjualan.customer = Console.ReadLine();
+
+            Console.Write("Jenis [T/K] : ");
+            penjualan.jenis = Console.ReadLine();
+
+            Console.Write("Total Nota : ");
+            penjualan.total = double.Parse(Console.ReadLine());
+
+            daftarPenjualan.Add(penjualan);
+
             Console.WriteLine("\nTekan ENTER untuk kembali ke menu");
             Console.ReadKey();
         }
@@ -96,7 +91,28 @@ namespace ProjectPenjualan
             Console.Clear();
 
             // PERINTAH: lengkapi kode untuk menghapus penjualan dari dalam collection
+            int no = -1, hapus = -1;
+            Console.WriteLine("Hapus  Penjualan");
+            Console.Write("Nota  : ");
+            string nota = Console.ReadLine();
 
+            foreach (Penjualan penjualan in daftarPenjualan)
+            {
+                no++;
+                if (penjualan.nota == nota)
+                {
+                    hapus = no;
+                }
+            }
+            if (hapus != -1)
+            {
+                daftarPenjualan.RemoveAt(hapus);
+                Console.WriteLine("\nData penjualan berhasil di hapus");
+            }
+            else
+            {
+                Console.WriteLine("\n Nota tidak ditemukan");
+            }
             Console.WriteLine("\nTekan ENTER untuk kembali ke menu");
             Console.ReadKey();
         }
@@ -106,6 +122,32 @@ namespace ProjectPenjualan
             Console.Clear();
 
             // PERINTAH: lengkapi kode untuk menampilkan daftar penjualan yang ada di dalam collection
+
+            int no = 0;
+            Console.WriteLine("Penjualan");
+            foreach (Penjualan penjualan in daftarPenjualan)
+            {
+                no++;
+                string jenis;
+                if(penjualan.jenis == "T")
+                {
+                    jenis = "Tunai";
+                }
+                else if(penjualan.jenis == "K")
+                {
+                    jenis = "Kredit";
+                }
+                else
+                {
+                    jenis = "Jenis tidak diketahui";
+                }
+                    Console.WriteLine(no + "." + penjualan.nota + "," + penjualan.tanggal + "," + penjualan.customer + "," + jenis + "," + penjualan.total);
+                }
+                if (no < 1)
+                {
+                    Console.WriteLine("Data Penjualan Kosong");
+                }
+
 
             Console.WriteLine("\nTekan enter untuk kembali ke menu");
             Console.ReadKey();
